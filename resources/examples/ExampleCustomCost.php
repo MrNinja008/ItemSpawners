@@ -15,6 +15,10 @@ class ExampleCustomCost extends Cost {
         return "StoneItem";
     }
 
+    public function toString(): string {
+        return $this->cost." Stone";
+    }
+
     public function execute(Player $player): bool {
         // check if player has stone
         if(!$player->getInventory()->contains(Item::get(Item::STONE, 0, $this->cost))) return false;

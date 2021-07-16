@@ -2,9 +2,9 @@
 
 namespace OguzhanUmutlu\ItemSpawners\spawners;
 
+use OguzhanUmutlu\ItemSpawners\ItemSpawners;
 use OguzhanUmutlu\ItemSpawners\tasks\BlockTask;
 use OguzhanUmutlu\ItemSpawners\costs\Cost;
-use OguzhanUmutlu\ItemSpawners\ItemSpawners;
 use pocketmine\block\Block;
 use pocketmine\item\Item;
 use pocketmine\level\Level;
