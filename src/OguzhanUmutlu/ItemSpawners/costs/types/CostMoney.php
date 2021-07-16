@@ -16,10 +16,11 @@ class CostMoney extends Cost {
     }
 
     public function toString(): string {
-        return $this->cost . EconomyAPI::getInstance()->getMonetaryUnit();
+        return $this->cost . class_exists(EconomyAPI::class) ? EconomyAPI::getInstance()->getMonetaryUnit() : "Unknown";
     }
 
     public function execute(Player $player): bool {
+        if(!class_exists(EconomyAPI::class)) return false;
         if(EconomyAPI::getInstance()->myMoney($player) < $this->cost) return false;
         EconomyAPI::getInstance()->reduceMoney($player, $this->cost);
         return true;
