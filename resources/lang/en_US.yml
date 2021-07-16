@@ -1,0 +1,13 @@
+---
+spawner-menu: "Spawner Menu"
+spawner-description: "Level: %0\nSelect an action:"
+max: "§cMAX"
+cost: "§eCost: §e%0"
+level-up-button: "Level up\n%0"
+remove-button: "Remove spawner"
+maxed: "§c> This spawner is already maxed!"
+enough-cost: "§c> You don't have enough stuff to level up this spawner!"
+leveled-up: "§a> Successfully leveled up spawner!"
+enough-space: "§c> You don't have enough space in your inventory!"
+remove-success: "§a> Spawner successfully removed!"
+...

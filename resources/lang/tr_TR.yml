@@ -1,0 +1,13 @@
+---
+spawner-menu: "Spawner Menüsü"
+spawner-description: "Seviye: %0\nBir işlem seç:"
+max: "§cMAKS"
+cost: "§eFiyat: §e%0"
+level-up-button: "Seviye atla\n%0"
+remove-button: "Spawner'ı kaldır"
+maxed: "§c> Bu spawner zaten son seviye!"
+enough-cost: "§c> Bu spawner'ı seviye atlatabilecek kadar yeterli şeyin yok!"
+leveled-up: "§a> Spawner başarıyla yükseltildi!"
+enough-space: "§c> Envanterinde yeterli alan yok!"
+remove-success: "§a> Spawner başarıyla kaldırıldı!"
+...

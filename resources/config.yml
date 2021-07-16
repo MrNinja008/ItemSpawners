@@ -1,0 +1,151 @@
+---
+lang: en_US
+# Languages:
+# en_US: project init
+# tr_TR: project init
+
+
+
+# 20 ticks = 1 second
+default-spawners:
+  coal:
+    enabled: true
+    cooldown: 100 # ticks
+    levels:
+      - item-count: 1 # DEFAULT
+      - type: money # money | xp | level
+        cost: 100
+        item-count: 2
+      - type: money
+        cost: 200
+        item-count: 3
+      - type: money
+        cost: 300
+        item-count: 4
+      - type: money
+        cost: 400
+        item-count: 5
+      - type: money
+        cost: 500
+        item-count: 6
+  iron:
+    enabled: true
+    cooldown: 250 # ticks
+    levels:
+      - item-count: 1 # DEFAULT
+      - type: money # money | xp | level
+        cost: 100
+        item-count: 2
+      - type: money
+        cost: 200
+        item-count: 3
+      - type: money
+        cost: 300
+        item-count: 4
+      - type: money
+        cost: 400
+        item-count: 5
+      - type: money
+        cost: 500
+        item-count: 6
+  gold:
+    enabled: true
+    cooldown: 500 # ticks
+    levels:
+      - item-count: 1 # DEFAULT
+      - type: money # money | xp | level
+        cost: 100
+        item-count: 2
+      - type: money
+        cost: 200
+        item-count: 3
+      - type: money
+        cost: 300
+        item-count: 4
+      - type: money
+        cost: 400
+        item-count: 5
+      - type: money
+        cost: 500
+        item-count: 6
+  lapislazuli:
+    enabled: true
+    cooldown: 1000 # ticks
+    levels:
+      - item-count: 2 # DEFAULT
+      - type: money # money | xp | level
+        cost: 100
+        item-count: 3
+      - type: money
+        cost: 200
+        item-count: 4
+      - type: money
+        cost: 300
+        item-count: 5
+      - type: money
+        cost: 400
+        item-count: 6
+      - type: money
+        cost: 500
+        item-count: 7
+  redstone:
+    enabled: true
+    cooldown: 1500 # ticks
+    levels:
+      - item-count: 2 # DEFAULT
+      - type: money # money | xp | level
+        cost: 100
+        item-count: 3
+      - type: money
+        cost: 200
+        item-count: 4
+      - type: money
+        cost: 300
+        item-count: 5
+      - type: money
+        cost: 400
+        item-count: 6
+      - type: money
+        cost: 500
+        item-count: 7
+  diamond:
+    enabled: true
+    cooldown: 2000 # ticks
+    levels:
+      - item-count: 1 # DEFAULT
+      - type: money # money | xp | level
+        cost: 100
+        item-count: 2
+      - type: money
+        cost: 200
+        item-count: 3
+      - type: money
+        cost: 300
+        item-count: 4
+      - type: money
+        cost: 400
+        item-count: 5
+      - type: money
+        cost: 500
+        item-count: 6
+  emerald:
+    enabled: true
+    cooldown: 3000 # ticks
+    levels:
+      - item-count: 1 # DEFAULT
+      - type: money # money | xp | level
+        cost: 100
+        item-count: 2
+      - type: money
+        cost: 200
+        item-count: 3
+      - type: money
+        cost: 300
+        item-count: 4
+      - type: money
+        cost: 400
+        item-count: 5
+      - type: money
+        cost: 500
+        item-count: 6
+...
