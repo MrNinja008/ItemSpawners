@@ -8,6 +8,6 @@ use pocketmine\plugin\PluginBase;
 
 class ExampleMain extends PluginBase {
     public function onEnable() {
-        ItemSpawners::registerSpawner(new ExampleSpawner(new Position(0, 0, 0, null)));
+        ItemSpawners::registerSpawner(new ExampleSpawner(new Position()));
     }
 }
