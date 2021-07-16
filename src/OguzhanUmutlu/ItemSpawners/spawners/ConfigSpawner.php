@@ -27,6 +27,6 @@ abstract class ConfigSpawner extends Spawner {
                 "xp" => new CostExperience($cost["cost"]),
                 "level" => new CostExperienceLevel($cost["cost"])
             ][$cost["type"]];
-        }, array_slice(ItemSpawners::$instance->getConfig()->getNested("default-spawners.".$this->name), 1));
+        }, array_slice(ItemSpawners::$instance->getConfig()->getNested("default-spawners.".$this->name.".levels"), 1));
     }
 }
