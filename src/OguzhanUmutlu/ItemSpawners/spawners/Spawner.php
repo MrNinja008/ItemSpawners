@@ -84,7 +84,7 @@ abstract class Spawner {
 
     public function nextLevelCost(): ?Cost {
         if(count($this->getLevelUpData()) <= $this->getLevel()) return null;
-        return $this->getLevelUpData()[$this->getLevel()+1];
+        return $this->getLevelUpData()[$this->getLevel()-1];
     }
 
     public function spawn(): void {

@@ -10,6 +10,7 @@ use OguzhanUmutlu\ItemSpawners\events\types\SpawnerPlaceEvent;
 use OguzhanUmutlu\ItemSpawners\spawners\Spawner;
 use pocketmine\block\Block;
 use pocketmine\block\BlockToolType;
+use pocketmine\block\Solid;
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\level\ChunkLoadEvent;
@@ -98,13 +99,18 @@ class EventListener implements Listener {
                     $spawner->kill();
                     ItemSpawners::unsetSpawner($key);
                 } else {
-                    $block->level->dropItem($block, $spawner->getItem());
+                    $vector3 = $block->add(0, 1);
+                    if($block->level->getBlock($vector3) instanceof Solid)
+                        $vector3 = $block;
+                    if($block->isCompatibleWithTool($event->getItem()) && !$event->getPlayer()->isCreative() && !$event->getPlayer()->isSpectator())
+                        $block->level->dropItem($vector3, $spawner->getItem());
                     $spawner->break();
                 }
             }
         }, 1);
     }
     public function onOpenSpawner(PlayerInteractEvent $event) {
+        if($event->getPlayer()->isSneaking()) return;
         ItemSpawners::$instance->getScheduler()->scheduleDelayedTask(new class($event) extends Task {
             public $event;
             public function __construct(PlayerInteractEvent $event) {
@@ -130,6 +136,10 @@ class EventListener implements Listener {
                     ],
                     function(Player $player, int $res) use ($spawner, $block): void {
                         if($spawner->isClosed()) return;
+                        $f = $spawner->getPosition()->floor();
+                        $key = $f->x.".".$f->y.".".$f->z.".".$spawner->getPosition()->level->getId();
+                        $spawner = ItemSpawners::getSpawner($key);
+                        if(!$spawner) return;
                         switch($res) {
                             case 0:
                                 if(!$spawner->nextLevelCost()) {
@@ -151,7 +161,11 @@ class EventListener implements Listener {
                                     $player->sendMessage(T::T("enough-space"));
                                     return;
                                 }
-                                $block->level->setBlock($block, Block::get(Block::AIR));
+                                $f = $spawner->getPosition()->floor();
+                                $key = $f->x.".".$f->y.".".$f->z.".".$spawner->getPosition()->level->getId();
+                                $spawner->kill();
+                                ItemSpawners::unsetSpawner($key);
+                                $spawner->getPosition()->level->setBlock($spawner->getPosition(), Block::get(Block::AIR));
                                 $player->getInventory()->addItem($item);
                                 $player->sendMessage(T::T("remove-success"));
                                 break;
